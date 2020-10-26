@@ -1,0 +1,160 @@
+html{height: 100vh;}
+
+body{
+	min-height: 100vh;
+	min-width: 100%;
+	position: relative;
+	padding: none;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #00A0EB;
+	background-size: cover;
+	font-family: police1;
+}
+
+@font-face{
+	src: url('POLICE/police1.ttf');
+	font-family: 'police1';
+}
+
+@keyframes bloc{
+	0%{transform: translateY(0);}
+	50%{transform: translateY(-70px);}
+	100%{transform: translateY(0); filter: invert(100%) hue-rotate(170deg);}
+}
+
+ul{
+	margin: 0;
+	padding: none;
+}
+
+/*ACCUEIL*/
+.like{display: flex; justify-content: center; width: 100vw; margin-top: 35vh;}
+	.like img{width: 10vw;}
+	#forwards{display: none;}
+	#forwards:checked + label > img{animation: bloc 0.6s ease-in-out; animation-fill-mode: forwards;}
+
+/*ACTUALITE*/
+main{width: 100%; display: flex; justify-content: center; flex-wrap: wrap; padding: 10vh 0; margin-bottom: 30vh;}
+article header{width: 90vw; height: 10vh; background-color: black; border-top-right-radius: 20px; border-top-left-radius: 20px;}
+section{text-align: center;}	
+	.article_body{display: flex;}
+	section:first-child img{width: 15vw;}
+	section:last-child img{width: 15vw; margin-bottom: 5vh;}
+	section a{color: black; text-decoration: none;}
+		section a:hover{opacity: 0.8;}
+	section li{list-style: none; margin-bottom: 5vh;}
+	section:first-child{width: 20vw; height: 150vh; background-color: white; border-bottom-left-radius: 20px;}
+	section:nth-child(2){width: 50vw; height: 150vh; background-color: gray;}
+	section:last-child{width: 20vw; height: 150vh; background-color: white; border-bottom-right-radius: 20px;}
+
+
+/*REALISATION*/
+.concrete img{width: 40vw; height: 40vh; border-radius: 20px;}
+	.concrete img:hover{opacity: 0.8;}
+
+/*EVENEMENT*/
+.event{display: flex; justify-content: space-evenly; width: 100vw; align-items: flex-end; position: absolute; bottom: 15vh;}
+	.event a{text-decoration: none; color: #14310B;}
+
+aside{
+	width: 20vw; 
+	height: 40vh; 
+	background-image: url('STYLE/pipe.png'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 20px; 
+	text-align: center; 
+	margin-left: 6vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+	aside:hover{transform: translateY(15vh); transition: 1s; cursor: pointer;}
+
+/*PASSES*/
+.passes{
+	width: 70vw; 
+	height: 40vh; 
+	background-color: white; 
+	padding: 2%;
+	border-radius: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+	.passes img{width: 10vw; margin-left: 6vw;}
+
+/*A VENIR*/
+.avenir{
+	width: 70vw; 
+	height: 40vh; 
+	background-color: white; 
+	padding: 2%;
+	border-radius: 20px;
+	display: flex;
+}
+	.avenir ul{flex-direction: column; justify-content: space-evenly; display: flex; height: 100%;}
+	.avenir iframe{width: 50%; border: solid 1px black;}
+
+/*MEDIAS*/
+.media img{width: 25vw; height: 30vh; border-radius: 10px;}
+	.media td:hover img{width: 50vw; height: 60vh; position: absolute; box-shadow: 0 0 100px black, 0 0 100px black, 0 0 100px black, 0 0 100px black; top: 20vh; left: 25vw; transition: 1s; cursor: pointer;}
+
+/*HEADER & FOOTER*/
+.nav_bar{
+	display: flex;
+	align-items: center;
+	height: 7vh;
+	max-height: 7vh;
+	width: 100%;
+	font-weight: bold;
+	background-color: #00A0EB;
+	position: fixed;
+	top: 0;
+}
+
+.watermark{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin-left: 5%;
+}
+	.watermark img{width: 3vw; border-radius: 20px;}
+
+nav{
+	display: flex; 
+	justify-content: space-evenly; 
+	width: 60vw; 
+	height: 7vh; 
+	align-items: center;
+	margin-right: 5%;
+}
+	nav a{text-decoration: none; color: black;}
+		nav a:hover{color: gray;}
+	.float{opacity: 0; position: absolute; top: 5vh; background-color: #00A0EB; padding: 0 1vw; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+	
+#float_nav:hover .float{opacity: 1; transition: 1s;}
+
+.search{
+	display: flex;
+	justify-content: space-between;
+	width: 10vw;
+	height: 50%;
+}
+	.loupe{width: 20%;}
+	.search_bar{width: 70%;}
+	
+
+footer{position: absolute; bottom: 0; width: 100%; font-weight: bold;}
+		
+.link_container{
+	display: flex;
+	background-image: url('STYLE/footerback.jpg');
+	background-size: cover;
+	justify-content: space-evenly;
+	padding: 5% 0;
+}
+	.link_container a{text-decoration: none; color: #422D0F; backdrop-filter: blur(10px); padding: 0 1%;}
+		.link_container a:hover{color: white; text-decoration: underline;}
